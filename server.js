@@ -12,8 +12,7 @@ const port = 3000;
 // Middleware para JSON
 app.use(bodyParser.json());
 app.use(cors({ origin: "*" })); // 👈 Permite llamadas desde cualquier origen
-// ⚠️ en producción pon solo tu dominio, ejemplo:
-// app.use(cors({ origin: "http://canvas-hill.local" }));
+// app.use(cors({ origin: "URL_DOMAIN" }));
 // Inicializar cliente Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
